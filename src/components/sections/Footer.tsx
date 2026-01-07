@@ -5,6 +5,14 @@ import { Mail, Phone, MapPin, ArrowUpRight, Instagram, Linkedin, Twitter, Target
 import { useAuditPopup } from '@/lib/hooks/useAuditPopup';
 import { motion } from 'framer-motion';
 
+const EngineLogo = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 40 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="40" height="40" rx="12" fill="currentColor" />
+    <path d="M12 28V12L28 20L12 28Z" fill="white" className="group-hover:translate-x-1 transition-transform" />
+    <path d="M22 12L32 20L22 28" stroke="#ff2d2d" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 const Footer = () => {
   const { openAuditPopup } = useAuditPopup();
 
@@ -24,7 +32,8 @@ const Footer = () => {
           <div className="lg:col-span-5">
             <a href="/" className="flex items-center gap-4 mb-10 group">
                 <div className="relative w-14 h-14 flex items-center justify-center bg-black rounded-2xl overflow-hidden group-hover:scale-110 transition-transform duration-500">
-                  <Zap className="w-8 h-8 text-white transition-all duration-700 group-hover:rotate-[360deg]" />
+                  {/* <Zap className="w-8 h-8 text-white transition-all duration-700 group-hover:rotate-[360deg]" /> */}
+                  <EngineLogo className="w-10 h-10 text-black transition-all duration-500 group-hover:rotate-[360deg]" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               <div className="flex flex-col">

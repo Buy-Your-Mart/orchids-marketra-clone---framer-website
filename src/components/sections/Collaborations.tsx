@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ShieldCheck, Zap, BarChart3 } from 'lucide-react';
 
 const partners = [
-  { name: 'Growth', logo: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/6e69a292-db84-47f6-8c7e-26279ce05a28-marketra-framer-wiki/assets/images/aQu4QqnFba5KNeeCAC1DueNTg-5.png' },
-  { name: 'Vibe', logo: 'https://framerusercontent.com/images/aQu4QqnFba5KNeeCAC1DueNTg-5.png' },
+  { name: 'Growth', logoText: 'GROWTH' },
+  { name: 'Vibe', logoText: 'VIBE' },
   { name: 'Velocity', logoText: 'VELOCITY' },
   { name: 'Apex', logoText: 'APEX' },
   { name: 'Pulse', logoText: 'PULSE' },

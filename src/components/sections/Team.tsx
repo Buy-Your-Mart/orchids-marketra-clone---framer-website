@@ -18,7 +18,7 @@ const teamMembers = [
       name: "Vishwas Moorjani",
       role: "Lead Developer & SEO",
       quote: "Expert full-stack developer and SEO specialist focused on building high-performance, search-engine-friendly digital projects. Master of PHP, JavaScript, Laravel, and modern web frameworks for scalable architecture.",
-      image: "https://avatars.githubusercontent.com/u/100036402?v=4",
+      image: "/team/vishwas.jpg",
       color: "#000000",
       badges: ["Full-Stack", "SEO Expert", "Tech Lead"]
     }
