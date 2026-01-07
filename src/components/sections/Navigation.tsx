@@ -2,8 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, ChevronRight, Phone, Zap } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronRight, Phone, Compass } from 'lucide-react';
 import { useAuditPopup } from '@/lib/hooks/useAuditPopup';
+
+const EngineLogo = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 40 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="40" height="40" rx="12" fill="currentColor" />
+    <path d="M12 28V12L28 20L12 28Z" fill="white" className="group-hover:translate-x-1 transition-transform" />
+    <path d="M22 12L32 20L22 28" stroke="#ff2d2d" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 const Navigation = () => {
   const { openAuditPopup } = useAuditPopup();
@@ -40,24 +48,24 @@ const Navigation = () => {
         }`}
       >
         <div className="container px-4">
-          <nav className={`flex items-center justify-between px-5 md:px-8 py-3 rounded-2xl transition-all duration-500 ${
+          <nav className={`flex items-center justify-between px-5 md:px-8 py-3 rounded-full transition-all duration-500 ${
             scrolled 
               ? 'bg-white/90 backdrop-blur-xl border border-black/5 shadow-[0_8px_40px_rgba(0,0,0,0.06)]' 
               : 'bg-transparent border border-transparent'
           }`}>
-            <a href="/" className="flex items-center gap-4 relative z-[130] group">
-                <div className="w-10 h-10 flex items-center justify-center bg-black rounded-xl overflow-hidden group-hover:scale-110 transition-transform duration-500">
-                  <Zap className="w-6 h-6 text-white transition-all duration-700 group-hover:rotate-[360deg]" />
-                </div>
-              <div className="flex flex-col">
-                <span className="text-[22px] font-black tracking-tighter text-black leading-none uppercase italic">
-                  ONLINE<span className="text-brand-red">NGINE</span>
-                </span>
-                <span className="text-[8px] font-black text-black/40 uppercase tracking-[0.4em] mt-1">
-                  High Performance Agency
-                </span>
-              </div>
-            </a>
+                <a href="/" className="flex items-center gap-3 relative z-[130] group">
+                  <EngineLogo className="w-10 h-10 text-black transition-all duration-500 group-hover:rotate-[360deg]" />
+                  <div className="flex flex-col">
+                    <div className="flex items-center">
+                      <span className="text-[22px] font-black tracking-tighter text-black leading-none uppercase italic">
+                        ONLINE<span className="text-brand-red">NGINE</span>
+                      </span>
+                    </div>
+                    <span className="text-[8px] font-black text-black/40 uppercase tracking-[0.4em] mt-1">
+                      Growth Accelerator
+                    </span>
+                  </div>
+                </a>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
@@ -73,28 +81,28 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-4">
               <a 
                 href="tel:+918369697652"
-                className="flex items-center gap-2 text-[13px] font-black text-black/40 hover:text-black transition-colors"
+                className="flex items-center gap-2 text-[13px] font-black text-black/40 hover:text-black transition-colors mr-2"
               >
                 <Phone className="w-3.5 h-3.5" />
                 +91 83696 97652
               </a>
-              <button 
-                onClick={openAuditPopup}
-                className="h-12 px-8 rounded-xl bg-black text-white text-[13px] font-black uppercase tracking-widest flex items-center gap-3 hover:bg-brand-red transition-all shadow-xl shadow-black/10 active:scale-95"
-              >
-                Get Audit
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
-            </div>
+                <button 
+                  onClick={openAuditPopup}
+                  className="h-11 px-7 rounded-full bg-black text-white text-[13px] font-black flex items-center gap-2 hover:bg-brand-red transition-all hover:scale-105 active:scale-95 shadow-xl shadow-black/10"
+                >
+                  Get Started
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </div>
 
-            {/* Mobile Toggle */}
-            <div className="flex items-center gap-3 md:hidden relative z-[130]">
-              <button 
-                onClick={() => setIsOpen(!isOpen)}
-                className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all active:scale-90 shadow-lg ${
+              {/* Mobile Toggle */}
+              <div className="flex items-center gap-3 md:hidden relative z-[130]">
+                <button 
+                  onClick={() => setIsOpen(!isOpen)}
+                className={`w-12 h-12 flex items-center justify-center rounded-full transition-all active:scale-90 shadow-lg ${
                   isOpen ? 'bg-brand-red text-white' : 'bg-black text-white'
                 }`}
                 aria-label="Toggle Menu"
@@ -164,20 +172,20 @@ const Navigation = () => {
               <div className="mt-auto pt-12 space-y-8">
                 <div className="flex flex-col gap-4">
                   <p className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em]">Growth Support</p>
-                  <div className="grid grid-cols-1 gap-4">
-                    <a 
-                      href="tel:+918369697652"
-                      className="h-20 w-full rounded-3xl bg-black/5 border border-black/5 text-black flex items-center px-8 gap-5 transition-colors hover:bg-black/10"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <div className="w-12 h-12 rounded-2xl bg-brand-red/10 flex items-center justify-center text-brand-red">
-                        <Phone className="w-6 h-6" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[10px] font-black text-black/40 uppercase tracking-widest">Call Expert</span>
-                        <span className="text-[18px] font-black">+91 83696 97652</span>
-                      </div>
-                    </a>
+                    <div className="grid grid-cols-1 gap-4">
+                      <a 
+                        href="tel:+918369697652"
+                        className="h-20 w-full rounded-3xl bg-black/5 border border-black/5 text-black flex items-center px-8 gap-5 transition-colors hover:bg-black/10"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <div className="w-12 h-12 rounded-2xl bg-brand-red/10 flex items-center justify-center text-brand-red">
+                          <Phone className="w-6 h-6" />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[10px] font-black text-black/40 uppercase tracking-widest">Call Expert</span>
+                          <span className="text-[18px] font-black">+91 83696 97652</span>
+                        </div>
+                      </a>
                     <button 
                       onClick={() => {
                         setIsOpen(false);
@@ -197,7 +205,7 @@ const Navigation = () => {
                 </div>
                 
                 <div className="pt-8 flex justify-between items-center text-[10px] font-black text-black/40 uppercase tracking-[0.2em] border-t border-black/5">
-                  <span>©2025 ONLINENGINE</span>
+                  <span>©2024 ONLINENGINE</span>
                   <div className="flex gap-5 text-black">
                     <span className="hover:text-brand-red transition-colors">Instagram</span>
                     <span className="hover:text-brand-red transition-colors">LinkedIn</span>

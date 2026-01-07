@@ -23,24 +23,14 @@ export default function Home() {
         <Hero />
         <AboutStats />
         <Collaborations />
-        <section id="services">
-          <Services />
-        </section>
+        <Services />
         <Partnership />
-        <section id="works">
-          <Works />
-        </section>
-        <section id="process">
-          <Process />
-        </section>
+        <Works />
+        <Process />
         <SmartSteps />
         <GrowthEngine />
-        <section id="team">
-          <Team />
-        </section>
-        <section id="faq">
-          <FAQ />
-        </section>
+        <Team />
+        <FAQ />
         <Testimonials />
         <Blog />
         <CTA />
