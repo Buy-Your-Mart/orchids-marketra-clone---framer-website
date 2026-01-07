@@ -1,26 +1,22 @@
 import type { NextConfig } from "next";
 import path from "node:path";
 
-const LOADER = path.resolve(__dirname, 'src/visual-edits/component-tagger-loader.js');
-
 const nextConfig: NextConfig = {
+  output: "export",
+
   images: {
+    unoptimized: true,
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-      {
-        protocol: 'http',
-        hostname: '**',
-      },
+      { protocol: "https", hostname: "**" },
+      { protocol: "http", hostname: "**" },
     ],
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../../'),
+
+  outputFileTracingRoot: path.resolve(__dirname, "../../"),
+
   typescript: {
     ignoreBuildErrors: true,
-  }
+  },
 };
 
 export default nextConfig;
-// Orchids restart: 1767803425380
