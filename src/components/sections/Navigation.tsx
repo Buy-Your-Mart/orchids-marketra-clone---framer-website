@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, ChevronRight, Phone, Compass } from 'lucide-react';
 import { useAuditPopup } from '@/lib/hooks/useAuditPopup';
 
-const EngineIcon = ({ className }: { className?: string }) => (
+const EngineLogo = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 40 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="40" height="40" rx="12" fill="currentColor" />
     <path d="M12 28V12L28 20L12 28Z" fill="white" className="group-hover:translate-x-1 transition-transform" />
@@ -13,7 +13,13 @@ const EngineIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-
+const EngineLogo = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 40 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="40" height="40" rx="12" fill="currentColor" />
+    <path d="M12 28V12L28 20L12 28Z" fill="white" className="group-hover:translate-x-1 transition-transform" />
+    <path d="M22 12L32 20L22 28" stroke="#ff2d2d" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 const Navigation = () => {
   const { openAuditPopup } = useAuditPopup();
@@ -58,7 +64,7 @@ const Navigation = () => {
             <a href="/" className="flex items-center gap-4 relative z-[130] group">
                 <div className="w-10 h-10 flex items-center justify-center bg-black rounded-xl overflow-hidden group-hover:scale-110 transition-transform duration-500">
                   {/* <Zap className="w-6 h-6 text-white transition-all duration-700 group-hover:rotate-[360deg]" /> */}
-                  <EngineIcon className="w-10 h-10 text-black transition-all duration-500 group-hover:rotate-[360deg]" />
+                  <EngineLogo className="w-10 h-10 text-black transition-all duration-500 group-hover:rotate-[360deg]" />
                 </div>
               <div className="flex flex-col">
                 <span className="text-[22px] font-black tracking-tighter text-black leading-none uppercase italic">
